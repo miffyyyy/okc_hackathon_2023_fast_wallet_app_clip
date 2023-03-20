@@ -1,10 +1,10 @@
 # okc_hackathon_2023_fast_wallet_app_clip_draft
 a lightweight wallet application that enables quick access and usage.
 
-General Use Case:
+###General Use Case:
 The main use case of this application is to create an airdrop smart contract on the OKChain network and distribute tokens to users who scan a QR code on a website. Users scan the QR code using the App Clip functionality, which opens a lightweight app for verification. Upon successful verification, users receive a key, allowing them to collect tokens, sign transactions, and copy their seed phrase.
 
-Interface and Acceptance Criteria:
+###Interface and Acceptance Criteria:
 
 The smart contract should be able to deploy on the OKChain network.
 The smart contract should have a function to airdrop tokens to verified addresses.
@@ -18,7 +18,7 @@ Users should be able to sign transactions and copy their seed phrase using the A
 
 Output a Skeleton of Code:
 
-// airdrop smart contract skeleton
+## airdrop smart contract skeleton
 
 ```// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
@@ -44,9 +44,10 @@ contract Airdrop {
         hasClaimed[recipient] = true;
         token.transfer(recipient, amount);
     }
-}```
+}
+```
 
-// Generate and display the QR code on the website
+## Generate and display the QR code on the website
 
 ```<!DOCTYPE html>
 <html lang="en">
@@ -75,7 +76,8 @@ contract Airdrop {
 </body>
 </html>
 ```
-// App Clip code skeleton
+
+## App Clip code skeleton
 ```
 const airdropContractAddress = "0x..."; // Airdrop contract address
 const privateKey = "..."; // Private key for signing transactions
@@ -111,52 +113,67 @@ async function verifyUser() {
 
 main().catch(console.error);
 ```
-\\ Create a wallet, claim tokens, and sign transactions in the App
+
+##In Swift app, create a wallet and save the seed phrase in the Keychain:
 
 ```
-// App code skeleton
+import web3swift
+import KeychainSwift
 
-const airdropContractAddress = "0x..."; // Airdrop contract address
-const privateKey = "..."; // Private key for signing transactions
+func createWalletAndSaveSeedPhrase() {
+    guard let mnemonic = try? BIP39.generateMnemonics(bitsOfEntropy: 128) else { return }
+    guard let keystore = try? BIP32Keystore(mnemonics: mnemonic) else { return }
+    let walletAddress = keystore.addresses[0]
 
-async function main() {
-  const web3 = new Web3("https://okchain-rpc-url"); // OKChain RPC URL
-  const airdropContract = new web3.eth.Contract(airdropABI, airdropContractAddress);
+    let keychain = KeychainSwift()
+    keychain.set(mnemonic, forKey: "seedPhrase")
 
-  // Create a new wallet for the user
-  const userWallet = web3.eth.accounts.create();
-  const userAddress = userWallet.address;
+    print("Wallet Address:", walletAddress.address)
+}
+Scan the QR code to get the backend URL, and then call the backend to claim tokens:
+swift
+Copy code
+import QRCodeReader
 
-  // Verify user and get key
-  const key = await verifyUser();
-
-  // Claim tokens
-  await claimTokens(userAddress, key);
-
-  // Display wallet information to the user
-  console.log("Wallet Address:", userAddress);
-  console.log("Private Key:", userWallet.privateKey);
-
-  // Sign a transaction
-  const toAddress = "0x..."; // Destination address
-  const amount = web3.utils.toWei("1", "ether");
-  const signedTransaction = await signTransaction(userWallet, toAddress, amount);
-
-  // Display transaction details
-  console.log("Signed Transaction:", signedTransaction);
+func claimTokens() {
+    let readerVC = QRCodeReaderViewController { result in
+        guard let backendURL = result?.value else { return }
+        // Call the backend to claim tokens
+    }
+    present(readerVC, animated: true)
 }
 
-async function verifyUser() {
-  // Implement user verification logic
-}
+```
 
-async function claimTokens(userAddress, key) {
-  // Implement token claiming logic using the airdropContract instance and key
-}
+## Python FastAPI Backend:
 
-async function signTransaction(userWallet, toAddress, amount) {
-  // Implement transaction signing logic using userWallet, toAddress, and amount
-}
+Install the necessary dependencies: web3 for Ethereum interactions, fastapi for the FastAPI framework, and uvicorn for serving the FastAPI app.
 
-main().catch(console.error);
+## Create a FastAPI app to handle token distribution:
+```
+from fastapi import FastAPI
+from web3 import Web3
+
+app = FastAPI()
+w3 = Web3(Web3.HTTPProvider("https://okchain-rpc-url"))
+
+airdrop_contract_address = "0x..."  # Airdrop contract address
+private_key = "..."  # Private key for signing transactions
+airdrop_abi = [...]  # Airdrop contract ABI
+
+
+@app.post("/claim_tokens/")
+async def claim_tokens(user_address: str):
+    airdrop_contract = w3.eth.contract(address=airdrop_contract_address, abi=airdrop_abi)
+
+    # Implement token claiming logic using airdrop_contract and user_address
+    # For example, call the smart contract function to transfer tokens to the user's address
+
+    return {"status": "success", "message": "Tokens claimed successfully"}
+ ```
+## Serve the FastAPI app:
+ 
+```
+$ uvicorn main:app --host 0.0.0.0 --port 8000
+
 ```

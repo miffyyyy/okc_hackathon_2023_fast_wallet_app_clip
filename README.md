@@ -1,10 +1,10 @@
 # okc_hackathon_2023_fast_wallet_app_clip_draft
 a lightweight wallet application that enables quick access and usage.
 
-###General Use Case:
+### General Use Case:
 The main use case of this application is to create an airdrop smart contract on the OKChain network and distribute tokens to users who scan a QR code on a website. Users scan the QR code using the App Clip functionality, which opens a lightweight app for verification. Upon successful verification, users receive a key, allowing them to collect tokens, sign transactions, and copy their seed phrase.
 
-###Interface and Acceptance Criteria:
+### Interface and Acceptance Criteria:
 
 The smart contract should be able to deploy on the OKChain network.
 The smart contract should have a function to airdrop tokens to verified addresses.
@@ -16,7 +16,7 @@ The App should receive tokens on the created wallet.
 Users should have access to their wallet with the received token.
 Users should be able to sign transactions and copy their seed phrase using the App Clip.
 
-Output a Skeleton of Code:
+## Output a Skeleton of Code:
 
 ## airdrop smart contract skeleton
 
@@ -114,7 +114,7 @@ async function verifyUser() {
 main().catch(console.error);
 ```
 
-##In Swift app, create a wallet and save the seed phrase in the Keychain:
+## In Swift app, create a wallet and save the seed phrase in the Keychain:
 
 ```
 import web3swift

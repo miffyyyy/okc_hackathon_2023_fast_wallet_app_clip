@@ -6,15 +6,15 @@ The main use case of this application is to create an airdrop smart contract on 
 
 ### Interface and Acceptance Criteria:
 
-The smart contract should be able to deploy on the OKChain network.
-The smart contract should have a function to airdrop tokens to verified addresses.
-The website should display a QR code that directs users to the App Clip.
-The App should have a QR code scanner to read the QR code and extract the URL.
-Upon scanning the QR code, the App should create a wallet for the user.
-The App Clip should verify the user and provide a key to collect tokens.
-The App should receive tokens on the created wallet.
-Users should have access to their wallet with the received token.
-Users should be able to sign transactions and copy their seed phrase using the App Clip.
+- The smart contract should be able to deploy on the OKChain network. 
+- The smart contract should have a function to airdrop tokens to verified addresses.
+- The website should display a QR code that directs users to the App Clip.
+- The App should have a QR code scanner to read the QR code and extract the URL.
+- Upon scanning the QR code, the App should create a wallet for the user.
+- The App Clip should verify the user and provide a key to collect tokens.
+- The App should receive tokens on the created wallet.
+- Users should have access to their wallet with the received token.
+- Users should be able to sign transactions and copy their seed phrase using the App Clip.
 
 ## Output a Skeleton of Code:
 

@@ -3,3 +3,5 @@ node_modules
 
 .DS_Store
 build/
+app/__pycache__
+new_venv/

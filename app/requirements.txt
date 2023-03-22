@@ -1,0 +1,6 @@
+fastapi
+uvicorn
+web3
+mysql-connector-python
+sqlalchemy
+databases

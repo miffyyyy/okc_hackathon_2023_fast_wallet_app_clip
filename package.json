@@ -1,0 +1,17 @@
+{
+  "name": "okc_hackathon_2023_fast_wallet_app_clip_draft",
+  "version": "1.0.0",
+  "description": "a lightweight wallet application that enables quick access and usage.",
+  "main": "truffle-config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.8.2",
+    "@truffle/hdwallet-provider": "^2.1.9",
+    "dotenv": "^16.0.3"
+  }
+}

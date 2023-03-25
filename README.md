@@ -182,9 +182,11 @@ $ uvicorn main:app --host 0.0.0.0 --port 8000
 
 
 ## create wallet
-```curl -X POST "http://localhost:8000/create_wallet_account/" -H "Content-Type: application/json" -d '{"device_id": "device_test_account_create_3"}'
+```
+curl -X POST "http://localhost:8000/create_wallet_account/" -H "Content-Type: application/json" -d '{"device_id": "device_test_account_create_3"}'
 ```
 
 ## claim token
-```curl -X POST "http://127.0.0.1:8000/claim_tokens/" -H "accept: application/json" -H "Content-Type: application/json" -d '{"wallet_address": {"address": "0xfad21d41f0913464242518f3fc502b25cec1e7f4"}, "device_id": "test1"}'
+```
+curl -X POST "http://127.0.0.1:8000/claim_tokens/" -H "accept: application/json" -H "Content-Type: application/json" -d '{"wallet_address": {"address": "0xfad21d41f0913464242518f3fc502b25cec1e7f4"}, "device_id": "test1"}'
 ```

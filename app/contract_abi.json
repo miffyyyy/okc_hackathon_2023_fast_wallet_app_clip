@@ -1,4 +1,6 @@
-{"abi": [
+
+
+abi = [
     {
       "anonymous": false,
       "inputs": [
@@ -51,4 +53,4 @@
       "stateMutability": "nonpayable",
       "type": "function"
     }
-  ]}
+  ]

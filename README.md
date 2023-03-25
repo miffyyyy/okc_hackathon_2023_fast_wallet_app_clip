@@ -158,3 +158,9 @@ curl -X POST "http://localhost:8000/create_wallet_account/" -H "Content-Type: ap
 ```
 curl -X POST "http://127.0.0.1:8000/claim_tokens/" -H "accept: application/json" -H "Content-Type: application/json" -d '{"wallet_address": {"address": "0xfad21d41f0913464242518f3fc502b25cec1e7f4"}, "device_id": "test1"}'
 ```
+
+
+## get balance
+```
+curl -X GET "http://localhost:8000/balance/0x619fEbfa88C5f8a2b11Bc1A50e01b14AcfA0565E/0x80dB20805c18cc5659D5523626ab18d95bF4B7de" -H "accept: application/json"
+```

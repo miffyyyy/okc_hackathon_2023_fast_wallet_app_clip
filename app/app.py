@@ -2,7 +2,7 @@ from fastapi import FastAPI, HTTPException, Body
 from starlette.responses import JSONResponse
 from pydantic import BaseModel, validator
 from web3 import Web3
-from sqlalchemy import create_engine, Column, Integer, String, Sequence
+from sqlalchemy import create_engine, Column, Integer, String, Sequence, Boolean
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from databases import Database
@@ -255,7 +255,7 @@ env_path = Path("..") / ".env"
 load_dotenv(dotenv_path=env_path)
 DECIMAL = 10**18
 DECIMAL_GWEI = 10**9
-MAX_GWEI_PRICE = 10
+MAX_GWEI_PRICE = 100
 MYSQL_USERNAME = os.getenv("MYSQL_USERNAME")
 MYSQL_PASSWORD = os.getenv("MYSQL_PASSWORD")
 AUTH_WALLET_PRIVATE_KEY = os.getenv("AUTH_WALLET_PRIVATE_KEY")
@@ -279,6 +279,8 @@ class Device(Base):
     __tablename__ = "devices"
 
     device_id = Column(String(255), primary_key=True)
+    wallet_created = Column(Boolean, default=False)
+    token_claimed = Column(Boolean, default=False)
 
 
 Base.metadata.create_all(bind=engine)
@@ -315,25 +317,25 @@ async def create_wallet_account(device_id_input: DeviceIDInput):
             "SELECT * FROM devices WHERE device_id=:device_id", {"device_id": device_id}
         )
         if device:
-            raise HTTPException(
-                status_code=400, detail="This device has already claimed a token."
+            if device["wallet_created"]:
+                raise HTTPException(
+                    status_code=400, detail="This device has already created a wallet."
+                )
+        else:
+            # Create a new wallet account
+            Account.enable_unaudited_hdwallet_features()
+            acct, mnemonic = Account.create_with_mnemonic()
+            print(acct == Account.from_mnemonic(mnemonic))
+            print("account: ", acct)
+            print("mnemonic: ", mnemonic)
+
+            # Save the device_id in the database with wallet_created set to True
+            query = "INSERT INTO devices (device_id, wallet_created) VALUES (:device_id, :wallet_created)"
+            await database.execute(
+                query, {"device_id": device_id, "wallet_created": True}
             )
 
-        # Create a new wallet account
-        # priv = secrets.token_hex(32)
-        # private_key = "0x" + priv
-        # print("SAVE BUT DO NOT SHARE THIS:", private_key)
-        # acct = Account.from_key(private_key)
-        # print("Address:", acct.address)
-        Account.enable_unaudited_hdwallet_features()
-        acct, mnemonic = Account.create_with_mnemonic()
-        print(acct == Account.from_mnemonic(mnemonic))
-
-        # Save the device_id in the database
-        query = "INSERT INTO devices (device_id) VALUES (:device_id)"
-        await database.execute(query, {"device_id": device_id})
-
-    return Wallet(address=acct.address, mnemonic=mnemonic)
+            return Wallet(address=acct.address, mnemonic=mnemonic)
 
 
 @app.on_event("startup")
@@ -359,7 +361,7 @@ async def claim_tokens(
         device = await database.fetch_one(
             "SELECT * FROM devices WHERE device_id=:device_id", {"device_id": device_id}
         )
-        if device:
+        if not device or device["token_claimed"]:
             raise HTTPException(
                 status_code=400, detail="This device has already claimed a token."
             )
@@ -378,12 +380,16 @@ async def claim_tokens(
     function_input = contract.encodeABI(
         fn_name="claimFor", args=[Web3.to_checksum_address(wallet_address.address)]
     )
+    await asyncio.sleep(2)
+    nonce = w3.eth.get_transaction_count(authorized_wallet_address, "pending")
+    print(f"Current nonce for address {authorized_wallet_address}: {nonce}")
+
     transaction_data = {
         "from": authorized_wallet_address,
         "to": contract_address,
         "gas": 1_000_000,
         "gasPrice": gas_price,
-        "nonce": w3.eth.get_transaction_count(authorized_wallet_address),
+        "nonce": nonce,
         "chainId": 5,
         "data": function_input,
     }
@@ -406,8 +412,11 @@ async def claim_tokens(
     transaction_hash = w3.eth.send_raw_transaction(signed_tx.rawTransaction)
 
     async with database.transaction():
-        query = "INSERT INTO devices (device_id) VALUES (:device_id)"
-        await database.execute(query, {"device_id": device_id})
+        # Update token_claimed to True after successfully claiming tokens
+        query = (
+            "UPDATE devices SET token_claimed=:token_claimed WHERE device_id=:device_id"
+        )
+        await database.execute(query, {"device_id": device_id, "token_claimed": True})
 
     return JSONResponse(
         content={
@@ -431,10 +440,14 @@ async def get_gas_price_async():
 
     gas_price = await loop.run_in_executor(None, fetch_gas_price)
     current_gas = gas_price / DECIMAL_GWEI
-    if current_gas * 3 > MAX_GWEI_PRICE:
+    if current_gas * 5 > MAX_GWEI_PRICE:
         gas_price = round(MAX_GWEI_PRICE * DECIMAL_GWEI)
     else:
-        gas_price = round(gas_price * 3)
+        gas_price = round(gas_price * 5)
+    # Increase gas price by 50% if it is still below 10 Gwei
+    if gas_price / DECIMAL_GWEI < 1000:
+        gas_price = round(gas_price * 1.5)
+
     return gas_price
 
 

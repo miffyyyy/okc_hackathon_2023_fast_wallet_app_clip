@@ -14,8 +14,242 @@ from eth_account import Account
 from pydantic import BaseModel, validator
 import json
 import os
-from abi import abi
+import secrets
 
+abi = [
+    {"inputs": [], "stateMutability": "nonpayable", "type": "constructor"},
+    {
+        "anonymous": False,
+        "inputs": [
+            {
+                "indexed": True,
+                "internalType": "address",
+                "name": "owner",
+                "type": "address",
+            },
+            {
+                "indexed": True,
+                "internalType": "address",
+                "name": "spender",
+                "type": "address",
+            },
+            {
+                "indexed": False,
+                "internalType": "uint256",
+                "name": "value",
+                "type": "uint256",
+            },
+        ],
+        "name": "Approval",
+        "type": "event",
+    },
+    {
+        "anonymous": False,
+        "inputs": [
+            {
+                "indexed": True,
+                "internalType": "address",
+                "name": "previousOwner",
+                "type": "address",
+            },
+            {
+                "indexed": True,
+                "internalType": "address",
+                "name": "newOwner",
+                "type": "address",
+            },
+        ],
+        "name": "OwnershipTransferred",
+        "type": "event",
+    },
+    {
+        "anonymous": False,
+        "inputs": [
+            {
+                "indexed": True,
+                "internalType": "address",
+                "name": "from",
+                "type": "address",
+            },
+            {
+                "indexed": True,
+                "internalType": "address",
+                "name": "to",
+                "type": "address",
+            },
+            {
+                "indexed": False,
+                "internalType": "uint256",
+                "name": "value",
+                "type": "uint256",
+            },
+        ],
+        "name": "Transfer",
+        "type": "event",
+    },
+    {
+        "inputs": [],
+        "name": "MAX_CLAIM_AMOUNT",
+        "outputs": [{"internalType": "uint256", "name": "", "type": "uint256"}],
+        "stateMutability": "view",
+        "type": "function",
+        "constant": True,
+    },
+    {
+        "inputs": [
+            {"internalType": "address", "name": "owner", "type": "address"},
+            {"internalType": "address", "name": "spender", "type": "address"},
+        ],
+        "name": "allowance",
+        "outputs": [{"internalType": "uint256", "name": "", "type": "uint256"}],
+        "stateMutability": "view",
+        "type": "function",
+        "constant": True,
+    },
+    {
+        "inputs": [
+            {"internalType": "address", "name": "spender", "type": "address"},
+            {"internalType": "uint256", "name": "amount", "type": "uint256"},
+        ],
+        "name": "approve",
+        "outputs": [{"internalType": "bool", "name": "", "type": "bool"}],
+        "stateMutability": "nonpayable",
+        "type": "function",
+    },
+    {
+        "inputs": [{"internalType": "address", "name": "account", "type": "address"}],
+        "name": "balanceOf",
+        "outputs": [{"internalType": "uint256", "name": "", "type": "uint256"}],
+        "stateMutability": "view",
+        "type": "function",
+        "constant": True,
+    },
+    {
+        "inputs": [],
+        "name": "decimals",
+        "outputs": [{"internalType": "uint8", "name": "", "type": "uint8"}],
+        "stateMutability": "view",
+        "type": "function",
+        "constant": True,
+    },
+    {
+        "inputs": [
+            {"internalType": "address", "name": "spender", "type": "address"},
+            {"internalType": "uint256", "name": "subtractedValue", "type": "uint256"},
+        ],
+        "name": "decreaseAllowance",
+        "outputs": [{"internalType": "bool", "name": "", "type": "bool"}],
+        "stateMutability": "nonpayable",
+        "type": "function",
+    },
+    {
+        "inputs": [{"internalType": "address", "name": "", "type": "address"}],
+        "name": "hasClaimed",
+        "outputs": [{"internalType": "bool", "name": "", "type": "bool"}],
+        "stateMutability": "view",
+        "type": "function",
+        "constant": True,
+    },
+    {
+        "inputs": [
+            {"internalType": "address", "name": "spender", "type": "address"},
+            {"internalType": "uint256", "name": "addedValue", "type": "uint256"},
+        ],
+        "name": "increaseAllowance",
+        "outputs": [{"internalType": "bool", "name": "", "type": "bool"}],
+        "stateMutability": "nonpayable",
+        "type": "function",
+    },
+    {
+        "inputs": [],
+        "name": "name",
+        "outputs": [{"internalType": "string", "name": "", "type": "string"}],
+        "stateMutability": "view",
+        "type": "function",
+        "constant": True,
+    },
+    {
+        "inputs": [],
+        "name": "owner",
+        "outputs": [{"internalType": "address", "name": "", "type": "address"}],
+        "stateMutability": "view",
+        "type": "function",
+        "constant": True,
+    },
+    {
+        "inputs": [],
+        "name": "renounceOwnership",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function",
+    },
+    {
+        "inputs": [],
+        "name": "symbol",
+        "outputs": [{"internalType": "string", "name": "", "type": "string"}],
+        "stateMutability": "view",
+        "type": "function",
+        "constant": True,
+    },
+    {
+        "inputs": [],
+        "name": "totalClaimed",
+        "outputs": [{"internalType": "uint256", "name": "", "type": "uint256"}],
+        "stateMutability": "view",
+        "type": "function",
+        "constant": True,
+    },
+    {
+        "inputs": [],
+        "name": "totalSupply",
+        "outputs": [{"internalType": "uint256", "name": "", "type": "uint256"}],
+        "stateMutability": "view",
+        "type": "function",
+        "constant": True,
+    },
+    {
+        "inputs": [
+            {"internalType": "address", "name": "to", "type": "address"},
+            {"internalType": "uint256", "name": "amount", "type": "uint256"},
+        ],
+        "name": "transfer",
+        "outputs": [{"internalType": "bool", "name": "", "type": "bool"}],
+        "stateMutability": "nonpayable",
+        "type": "function",
+    },
+    {
+        "inputs": [
+            {"internalType": "address", "name": "from", "type": "address"},
+            {"internalType": "address", "name": "to", "type": "address"},
+            {"internalType": "uint256", "name": "amount", "type": "uint256"},
+        ],
+        "name": "transferFrom",
+        "outputs": [{"internalType": "bool", "name": "", "type": "bool"}],
+        "stateMutability": "nonpayable",
+        "type": "function",
+    },
+    {
+        "inputs": [{"internalType": "address", "name": "newOwner", "type": "address"}],
+        "name": "transferOwnership",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function",
+    },
+    {
+        "inputs": [],
+        "name": "claim",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function",
+    },
+    {
+        "inputs": [{"internalType": "address", "name": "recipient", "type": "address"}],
+        "name": "claimFor",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function",
+    },
+]
 
 env_path = Path("..") / ".env"
 load_dotenv(dotenv_path=env_path)
@@ -25,9 +259,10 @@ MAX_GWEI_PRICE = 100
 MYSQL_USERNAME = os.getenv("MYSQL_USERNAME")
 MYSQL_PASSWORD = os.getenv("MYSQL_PASSWORD")
 AUTH_WALLET_PRIVATE_KEY = os.getenv("AUTH_WALLET_PRIVATE_KEY")
-AUTH_WALLET_ADDRESS = Web3.to_checksum_address(os.getenv("AUTH_WALLET_ADDRESS"))
 
+AUTH_WALLET_ADDRESS = Web3.to_checksum_address(os.getenv("AUTH_WALLET_ADDRESS"))
 print("aaaaa", AUTH_WALLET_ADDRESS)
+
 print("MYSQL_USERNAME:", MYSQL_USERNAME)
 print("MYSQL_PASSWORD:", MYSQL_PASSWORD)
 
@@ -35,6 +270,7 @@ DATABASE_URL = f"mysql://{MYSQL_USERNAME}:{MYSQL_PASSWORD}@localhost/mydatabase"
 database = Database(DATABASE_URL)
 engine = create_engine(DATABASE_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+
 
 Base = declarative_base()
 
@@ -48,6 +284,7 @@ class Device(Base):
 
 
 Base.metadata.create_all(bind=engine)
+
 
 app = FastAPI()
 
@@ -125,8 +362,7 @@ async def ping():
 async def get_erc20_balance(
     contract_address: str, account_address: str
 ) -> BalanceResponse:
-    await asyncio.sleep(20)
-    w3 = Web3(Web3.HTTPProvider("https://exchaintestrpc.okex.org"))
+    w3 = Web3(Web3.HTTPProvider("https://rpc.ankr.com/eth_goerli"))
     _contract_address = Web3.to_checksum_address(contract_address)
     contract = w3.eth.contract(address=_contract_address, abi=abi)
     # get the balance of the account
@@ -152,9 +388,9 @@ async def claim_tokens(
                 status_code=400, detail="This device has already claimed a token."
             )
 
-    w3 = Web3(Web3.HTTPProvider("https://exchaintestrpc.okex.org"))
+    w3 = Web3(Web3.HTTPProvider("https://rpc.ankr.com/eth_goerli"))
     contract_address = Web3.to_checksum_address(
-        "0x9715CA05c0336408a1Cc04e5B2cA2bd5F89Ca622"
+        "0x619fEbfa88C5f8a2b11Bc1A50e01b14AcfA0565E"
     )
     contract = w3.eth.contract(address=contract_address, abi=abi)
 
@@ -170,6 +406,16 @@ async def claim_tokens(
     nonce = w3.eth.get_transaction_count(authorized_wallet_address, "pending")
     print(f"Current nonce for address {authorized_wallet_address}: {nonce}")
 
+    transaction_data = {
+        "from": authorized_wallet_address,
+        "to": contract_address,
+        "gas": 1_000_000,
+        "gasPrice": gas_price,
+        "nonce": nonce,
+        "chainId": 5,
+        "data": function_input,
+    }
+
     transaction = {
         "to": contract_address,
         "from": authorized_wallet_address,
@@ -177,8 +423,8 @@ async def claim_tokens(
         "gas": 1_000_000,
         "gasPrice": gas_price,
         "nonce": w3.eth.get_transaction_count(authorized_wallet_address),
-        "chainId": 65,
-        "data": function_input,
+        "chainId": 5,
+        "data": transaction_data["data"],
     }
 
     signed_tx = w3.eth.account.sign_transaction(
@@ -209,7 +455,7 @@ def is_valid_wallet_address(address: str) -> bool:
 
 async def get_gas_price_async():
     loop = asyncio.get_event_loop()
-    w3 = Web3(Web3.HTTPProvider("https://exchaintestrpc.okex.org"))
+    w3 = Web3(Web3.HTTPProvider("https://rpc.ankr.com/eth_goerli"))
 
     def fetch_gas_price():
         return w3.eth.gas_price

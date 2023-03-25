@@ -5,7 +5,7 @@ import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract MifToken is ERC20, Ownable {
-    uint256 public constant MAX_CLAIM_AMOUNT = 1 * 10;
+    uint256 public constant MAX_CLAIM_AMOUNT = 1 * 10 ** 18;
     uint256 public totalClaimed;
 
     // Mapping to track if an address has already claimed a token

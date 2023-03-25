@@ -4,22 +4,22 @@ abi = json.loads(
     """[
     {"inputs": [], "stateMutability": "nonpayable", "type": "constructor"},
     {
-        "anonymous": False,
+        "anonymous": false,
         "inputs": [
             {
-                "indexed": True,
+                "indexed": true,
                 "internalType": "address",
                 "name": "owner",
                 "type": "address",
             },
             {
-                "indexed": True,
+                "indexed": true,
                 "internalType": "address",
                 "name": "spender",
                 "type": "address",
             },
             {
-                "indexed": False,
+                "indexed": false,
                 "internalType": "uint256",
                 "name": "value",
                 "type": "uint256",
@@ -29,16 +29,16 @@ abi = json.loads(
         "type": "event",
     },
     {
-        "anonymous": False,
+        "anonymous": false,
         "inputs": [
             {
-                "indexed": True,
+                "indexed": true,
                 "internalType": "address",
                 "name": "previousOwner",
                 "type": "address",
             },
             {
-                "indexed": True,
+                "indexed": true,
                 "internalType": "address",
                 "name": "newOwner",
                 "type": "address",
@@ -48,22 +48,22 @@ abi = json.loads(
         "type": "event",
     },
     {
-        "anonymous": False,
+        "anonymous": false,
         "inputs": [
             {
-                "indexed": True,
+                "indexed": true,
                 "internalType": "address",
                 "name": "from",
                 "type": "address",
             },
             {
-                "indexed": True,
+                "indexed": true,
                 "internalType": "address",
                 "name": "to",
                 "type": "address",
             },
             {
-                "indexed": False,
+                "indexed": false,
                 "internalType": "uint256",
                 "name": "value",
                 "type": "uint256",
@@ -78,7 +78,7 @@ abi = json.loads(
         "outputs": [{"internalType": "uint256", "name": "", "type": "uint256"}],
         "stateMutability": "view",
         "type": "function",
-        "constant": True,
+        "constant": true,
     },
     {
         "inputs": [
@@ -89,7 +89,7 @@ abi = json.loads(
         "outputs": [{"internalType": "uint256", "name": "", "type": "uint256"}],
         "stateMutability": "view",
         "type": "function",
-        "constant": True,
+        "constant": true,
     },
     {
         "inputs": [
@@ -107,7 +107,7 @@ abi = json.loads(
         "outputs": [{"internalType": "uint256", "name": "", "type": "uint256"}],
         "stateMutability": "view",
         "type": "function",
-        "constant": True,
+        "constant": true,
     },
     {
         "inputs": [],
@@ -115,7 +115,7 @@ abi = json.loads(
         "outputs": [{"internalType": "uint8", "name": "", "type": "uint8"}],
         "stateMutability": "view",
         "type": "function",
-        "constant": True,
+        "constant": true,
     },
     {
         "inputs": [
@@ -133,7 +133,7 @@ abi = json.loads(
         "outputs": [{"internalType": "bool", "name": "", "type": "bool"}],
         "stateMutability": "view",
         "type": "function",
-        "constant": True,
+        "constant": true,
     },
     {
         "inputs": [
@@ -151,7 +151,7 @@ abi = json.loads(
         "outputs": [{"internalType": "string", "name": "", "type": "string"}],
         "stateMutability": "view",
         "type": "function",
-        "constant": True,
+        "constant": true,
     },
     {
         "inputs": [],
@@ -159,7 +159,7 @@ abi = json.loads(
         "outputs": [{"internalType": "address", "name": "", "type": "address"}],
         "stateMutability": "view",
         "type": "function",
-        "constant": True,
+        "constant": true,
     },
     {
         "inputs": [],
@@ -174,7 +174,7 @@ abi = json.loads(
         "outputs": [{"internalType": "string", "name": "", "type": "string"}],
         "stateMutability": "view",
         "type": "function",
-        "constant": True,
+        "constant": true,
     },
     {
         "inputs": [],
@@ -182,7 +182,7 @@ abi = json.loads(
         "outputs": [{"internalType": "uint256", "name": "", "type": "uint256"}],
         "stateMutability": "view",
         "type": "function",
-        "constant": True,
+        "constant": true,
     },
     {
         "inputs": [],
@@ -190,7 +190,7 @@ abi = json.loads(
         "outputs": [{"internalType": "uint256", "name": "", "type": "uint256"}],
         "stateMutability": "view",
         "type": "function",
-        "constant": True,
+        "constant": true,
     },
     {
         "inputs": [

@@ -6,9 +6,6 @@ The main use case of this application is to create an airdrop smart contract on 
 
 ### Interface and Acceptance Criteria:
 
-- The smart contract should be able to deploy on the OKChain network. 
-- The smart contract should have a function to airdrop tokens to verified addresses.
-- The website should display a QR code that directs users to the App Clip.
 - The App should have a QR code scanner to read the QR code and extract the URL.
 - Upon scanning the QR code, the App should create a wallet for the user.
 - The App Clip should verify the user and provide a key to collect tokens.
@@ -114,36 +111,7 @@ async function verifyUser() {
 main().catch(console.error);
 ```
 
-## In Swift app, create a wallet and save the seed phrase in the Keychain:
 
-```
-import web3swift
-import KeychainSwift
-
-func createWalletAndSaveSeedPhrase() {
-    guard let mnemonic = try? BIP39.generateMnemonics(bitsOfEntropy: 128) else { return }
-    guard let keystore = try? BIP32Keystore(mnemonics: mnemonic) else { return }
-    let walletAddress = keystore.addresses[0]
-
-    let keychain = KeychainSwift()
-    keychain.set(mnemonic, forKey: "seedPhrase")
-
-    print("Wallet Address:", walletAddress.address)
-}
-Scan the QR code to get the backend URL, and then call the backend to claim tokens:
-swift
-Copy code
-import QRCodeReader
-
-func claimTokens() {
-    let readerVC = QRCodeReaderViewController { result in
-        guard let backendURL = result?.value else { return }
-        // Call the backend to claim tokens
-    }
-    present(readerVC, animated: true)
-}
-
-```
 
 ## Python FastAPI Backend:
 

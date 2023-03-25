@@ -299,6 +299,11 @@ class WalletAddress(BaseModel):
         return address
 
 
+class BalanceResponse(BaseModel):
+    balance: float
+    name: str
+
+
 class Wallet(BaseModel):
     address: str
     mnemonic: str
@@ -351,6 +356,23 @@ async def shutdown():
 @app.get("/ping")
 async def ping():
     return {"ping": "pong"}
+
+
+@app.get("/balance/{contract_address}/{account_address}")
+async def get_erc20_balance(
+    contract_address: str, account_address: str
+) -> BalanceResponse:
+    w3 = Web3(Web3.HTTPProvider("https://rpc.ankr.com/eth_goerli"))
+    _contract_address = Web3.to_checksum_address(contract_address)
+    contract = w3.eth.contract(address=_contract_address, abi=abi)
+    # get the balance of the account
+    balance = contract.functions.balanceOf(
+        Web3.to_checksum_address(account_address)
+    ).call()
+    name = contract.functions.name().call()
+    print(f"balanceOf({account_address}):", balance)
+    print(f"name():", name)
+    return BalanceResponse(balance=balance, name=name)
 
 
 @app.post("/claim_tokens/")
@@ -420,7 +442,7 @@ async def claim_tokens(
 
     return JSONResponse(
         content={
-            "success": "Token claimed successfully",
+            "success": True,
             "transaction_hash": transaction_hash.hex(),
         },
         status_code=200,

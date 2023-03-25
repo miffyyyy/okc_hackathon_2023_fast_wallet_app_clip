@@ -1,0 +1,630 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		87CEC5DF29CEF5B1001B2B4F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 87CEC5DE29CEF5B1001B2B4F /* Alamofire */; };
+		87CEC5E229CEF64E001B2B4F /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 87CEC5E129CEF64E001B2B4F /* SwiftyJSON */; };
+		87CEC5E629CF6113001B2B4F /* balanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CEC5E529CF6113001B2B4F /* balanceView.swift */; };
+		87CF8B8029CDA4FC00FC84EE /* fastwalletApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CF8B7F29CDA4FC00FC84EE /* fastwalletApp.swift */; };
+		87CF8B8229CDA4FC00FC84EE /* contentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CF8B8129CDA4FC00FC84EE /* contentView.swift */; };
+		87CF8B8429CDA4FD00FC84EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87CF8B8329CDA4FD00FC84EE /* Assets.xcassets */; };
+		87CF8B8729CDA4FD00FC84EE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87CF8B8629CDA4FD00FC84EE /* Preview Assets.xcassets */; };
+		87CF8B9129CDA4FD00FC84EE /* fastwalletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CF8B9029CDA4FD00FC84EE /* fastwalletTests.swift */; };
+		87CF8B9B29CDA4FD00FC84EE /* fastwalletUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CF8B9A29CDA4FD00FC84EE /* fastwalletUITests.swift */; };
+		87CF8B9D29CDA4FD00FC84EE /* fastwalletUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CF8B9C29CDA4FD00FC84EE /* fastwalletUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		87CF8B8D29CDA4FD00FC84EE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 87CF8B7429CDA4FC00FC84EE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 87CF8B7B29CDA4FC00FC84EE;
+			remoteInfo = fastwallet;
+		};
+		87CF8B9729CDA4FD00FC84EE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 87CF8B7429CDA4FC00FC84EE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 87CF8B7B29CDA4FC00FC84EE;
+			remoteInfo = fastwallet;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		87CEC5E529CF6113001B2B4F /* balanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = balanceView.swift; sourceTree = "<group>"; };
+		87CF8B7C29CDA4FC00FC84EE /* fastwallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fastwallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		87CF8B7F29CDA4FC00FC84EE /* fastwalletApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fastwalletApp.swift; sourceTree = "<group>"; };
+		87CF8B8129CDA4FC00FC84EE /* contentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contentView.swift; sourceTree = "<group>"; };
+		87CF8B8329CDA4FD00FC84EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		87CF8B8629CDA4FD00FC84EE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		87CF8B8C29CDA4FD00FC84EE /* fastwalletTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fastwalletTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		87CF8B9029CDA4FD00FC84EE /* fastwalletTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fastwalletTests.swift; sourceTree = "<group>"; };
+		87CF8B9629CDA4FD00FC84EE /* fastwalletUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fastwalletUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		87CF8B9A29CDA4FD00FC84EE /* fastwalletUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fastwalletUITests.swift; sourceTree = "<group>"; };
+		87CF8B9C29CDA4FD00FC84EE /* fastwalletUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fastwalletUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		87CF8B7929CDA4FC00FC84EE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87CEC5E229CEF64E001B2B4F /* SwiftyJSON in Frameworks */,
+				87CEC5DF29CEF5B1001B2B4F /* Alamofire in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		87CF8B8929CDA4FD00FC84EE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		87CF8B9329CDA4FD00FC84EE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		87CF8B7329CDA4FC00FC84EE = {
+			isa = PBXGroup;
+			children = (
+				87CF8B7E29CDA4FC00FC84EE /* fastwallet */,
+				87CF8B8F29CDA4FD00FC84EE /* fastwalletTests */,
+				87CF8B9929CDA4FD00FC84EE /* fastwalletUITests */,
+				87CF8B7D29CDA4FC00FC84EE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		87CF8B7D29CDA4FC00FC84EE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				87CF8B7C29CDA4FC00FC84EE /* fastwallet.app */,
+				87CF8B8C29CDA4FD00FC84EE /* fastwalletTests.xctest */,
+				87CF8B9629CDA4FD00FC84EE /* fastwalletUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		87CF8B7E29CDA4FC00FC84EE /* fastwallet */ = {
+			isa = PBXGroup;
+			children = (
+				87CEC5E529CF6113001B2B4F /* balanceView.swift */,
+				87CF8B7F29CDA4FC00FC84EE /* fastwalletApp.swift */,
+				87CF8B8129CDA4FC00FC84EE /* contentView.swift */,
+				87CF8B8329CDA4FD00FC84EE /* Assets.xcassets */,
+				87CF8B8529CDA4FD00FC84EE /* Preview Content */,
+			);
+			path = fastwallet;
+			sourceTree = "<group>";
+		};
+		87CF8B8529CDA4FD00FC84EE /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				87CF8B8629CDA4FD00FC84EE /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		87CF8B8F29CDA4FD00FC84EE /* fastwalletTests */ = {
+			isa = PBXGroup;
+			children = (
+				87CF8B9029CDA4FD00FC84EE /* fastwalletTests.swift */,
+			);
+			path = fastwalletTests;
+			sourceTree = "<group>";
+		};
+		87CF8B9929CDA4FD00FC84EE /* fastwalletUITests */ = {
+			isa = PBXGroup;
+			children = (
+				87CF8B9A29CDA4FD00FC84EE /* fastwalletUITests.swift */,
+				87CF8B9C29CDA4FD00FC84EE /* fastwalletUITestsLaunchTests.swift */,
+			);
+			path = fastwalletUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		87CF8B7B29CDA4FC00FC84EE /* fastwallet */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 87CF8BA029CDA4FD00FC84EE /* Build configuration list for PBXNativeTarget "fastwallet" */;
+			buildPhases = (
+				87CF8B7829CDA4FC00FC84EE /* Sources */,
+				87CF8B7929CDA4FC00FC84EE /* Frameworks */,
+				87CF8B7A29CDA4FC00FC84EE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = fastwallet;
+			packageProductDependencies = (
+				87CEC5DE29CEF5B1001B2B4F /* Alamofire */,
+				87CEC5E129CEF64E001B2B4F /* SwiftyJSON */,
+			);
+			productName = fastwallet;
+			productReference = 87CF8B7C29CDA4FC00FC84EE /* fastwallet.app */;
+			productType = "com.apple.product-type.application";
+		};
+		87CF8B8B29CDA4FD00FC84EE /* fastwalletTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 87CF8BA329CDA4FD00FC84EE /* Build configuration list for PBXNativeTarget "fastwalletTests" */;
+			buildPhases = (
+				87CF8B8829CDA4FD00FC84EE /* Sources */,
+				87CF8B8929CDA4FD00FC84EE /* Frameworks */,
+				87CF8B8A29CDA4FD00FC84EE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				87CF8B8E29CDA4FD00FC84EE /* PBXTargetDependency */,
+			);
+			name = fastwalletTests;
+			productName = fastwalletTests;
+			productReference = 87CF8B8C29CDA4FD00FC84EE /* fastwalletTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		87CF8B9529CDA4FD00FC84EE /* fastwalletUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 87CF8BA629CDA4FD00FC84EE /* Build configuration list for PBXNativeTarget "fastwalletUITests" */;
+			buildPhases = (
+				87CF8B9229CDA4FD00FC84EE /* Sources */,
+				87CF8B9329CDA4FD00FC84EE /* Frameworks */,
+				87CF8B9429CDA4FD00FC84EE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				87CF8B9829CDA4FD00FC84EE /* PBXTargetDependency */,
+			);
+			name = fastwalletUITests;
+			productName = fastwalletUITests;
+			productReference = 87CF8B9629CDA4FD00FC84EE /* fastwalletUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		87CF8B7429CDA4FC00FC84EE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					87CF8B7B29CDA4FC00FC84EE = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					87CF8B8B29CDA4FD00FC84EE = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 87CF8B7B29CDA4FC00FC84EE;
+					};
+					87CF8B9529CDA4FD00FC84EE = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 87CF8B7B29CDA4FC00FC84EE;
+					};
+				};
+			};
+			buildConfigurationList = 87CF8B7729CDA4FC00FC84EE /* Build configuration list for PBXProject "fastwallet" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 87CF8B7329CDA4FC00FC84EE;
+			packageReferences = (
+				87CEC5DD29CEF5B1001B2B4F /* XCRemoteSwiftPackageReference "Alamofire" */,
+				87CEC5E029CEF64E001B2B4F /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+			);
+			productRefGroup = 87CF8B7D29CDA4FC00FC84EE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				87CF8B7B29CDA4FC00FC84EE /* fastwallet */,
+				87CF8B8B29CDA4FD00FC84EE /* fastwalletTests */,
+				87CF8B9529CDA4FD00FC84EE /* fastwalletUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		87CF8B7A29CDA4FC00FC84EE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87CF8B8729CDA4FD00FC84EE /* Preview Assets.xcassets in Resources */,
+				87CF8B8429CDA4FD00FC84EE /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		87CF8B8A29CDA4FD00FC84EE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		87CF8B9429CDA4FD00FC84EE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		87CF8B7829CDA4FC00FC84EE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87CEC5E629CF6113001B2B4F /* balanceView.swift in Sources */,
+				87CF8B8229CDA4FC00FC84EE /* contentView.swift in Sources */,
+				87CF8B8029CDA4FC00FC84EE /* fastwalletApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		87CF8B8829CDA4FD00FC84EE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87CF8B9129CDA4FD00FC84EE /* fastwalletTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		87CF8B9229CDA4FD00FC84EE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87CF8B9B29CDA4FD00FC84EE /* fastwalletUITests.swift in Sources */,
+				87CF8B9D29CDA4FD00FC84EE /* fastwalletUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		87CF8B8E29CDA4FD00FC84EE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 87CF8B7B29CDA4FC00FC84EE /* fastwallet */;
+			targetProxy = 87CF8B8D29CDA4FD00FC84EE /* PBXContainerItemProxy */;
+		};
+		87CF8B9829CDA4FD00FC84EE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 87CF8B7B29CDA4FC00FC84EE /* fastwallet */;
+			targetProxy = 87CF8B9729CDA4FD00FC84EE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		87CF8B9E29CDA4FD00FC84EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		87CF8B9F29CDA4FD00FC84EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		87CF8BA129CDA4FD00FC84EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"fastwallet/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = TT.fastwallet;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		87CF8BA229CDA4FD00FC84EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"fastwallet/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = TT.fastwallet;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		87CF8BA429CDA4FD00FC84EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = TT.fastwalletTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/fastwallet.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/fastwallet";
+			};
+			name = Debug;
+		};
+		87CF8BA529CDA4FD00FC84EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = TT.fastwalletTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/fastwallet.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/fastwallet";
+			};
+			name = Release;
+		};
+		87CF8BA729CDA4FD00FC84EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = TT.fastwalletUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = fastwallet;
+			};
+			name = Debug;
+		};
+		87CF8BA829CDA4FD00FC84EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = TT.fastwalletUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = fastwallet;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		87CF8B7729CDA4FC00FC84EE /* Build configuration list for PBXProject "fastwallet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				87CF8B9E29CDA4FD00FC84EE /* Debug */,
+				87CF8B9F29CDA4FD00FC84EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		87CF8BA029CDA4FD00FC84EE /* Build configuration list for PBXNativeTarget "fastwallet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				87CF8BA129CDA4FD00FC84EE /* Debug */,
+				87CF8BA229CDA4FD00FC84EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		87CF8BA329CDA4FD00FC84EE /* Build configuration list for PBXNativeTarget "fastwalletTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				87CF8BA429CDA4FD00FC84EE /* Debug */,
+				87CF8BA529CDA4FD00FC84EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		87CF8BA629CDA4FD00FC84EE /* Build configuration list for PBXNativeTarget "fastwalletUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				87CF8BA729CDA4FD00FC84EE /* Debug */,
+				87CF8BA829CDA4FD00FC84EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		87CEC5DD29CEF5B1001B2B4F /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		87CEC5E029CEF64E001B2B4F /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		87CEC5DE29CEF5B1001B2B4F /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 87CEC5DD29CEF5B1001B2B4F /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		87CEC5E129CEF64E001B2B4F /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 87CEC5E029CEF64E001B2B4F /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 87CF8B7429CDA4FC00FC84EE /* Project object */;
+}

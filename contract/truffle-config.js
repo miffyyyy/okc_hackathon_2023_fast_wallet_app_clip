@@ -16,7 +16,6 @@ module.exports = {
           providerOrUrl: process.env.GOERLI_RPC_URL,
         }),
       network_id: 5,
-      gas: 5500000,
       confirmations: 2,
       timeoutBlocks: 200,
       skipDryRun: true,

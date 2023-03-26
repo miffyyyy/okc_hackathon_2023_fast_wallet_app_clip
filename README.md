@@ -13,6 +13,10 @@ The main use case of this application is to create an airdrop smart contract on 
 - Users should have access to their wallet with the received token.
 - Users should be able to sign transactions and copy their seed phrase using the App Clip.
 
+## How to verify the user by device id
+- `UIDevice.current.identifierForVendor?.uuidString` provides a unique identifier for a device, which can be used to verify the user within the context of a specific vendor's apps. Although it's not linked to a user's personal information, this identifier can help app developers associate app-related data with a specific device. 
+- Uniqueness: The identifierForVendor is unique because it is generated based on the app's bundle ID and the device's vendor ID. 
+- When a user interacts with the app, we can retrieve their device's identifierForVendor and store it on our server.
 
 ## Output a Skeleton of Code:
 

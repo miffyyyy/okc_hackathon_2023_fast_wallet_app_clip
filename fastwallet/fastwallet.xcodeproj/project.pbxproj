@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8742D9AE29CFF5D5005EE518 /* walletAppClipApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8742D9AD29CFF5D5005EE518 /* walletAppClipApp.swift */; };
+		8742D9B029CFF5D5005EE518 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8742D9AF29CFF5D5005EE518 /* ContentView.swift */; };
+		8742D9B229CFF5D6005EE518 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8742D9B129CFF5D6005EE518 /* Assets.xcassets */; };
+		8742D9B529CFF5D6005EE518 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8742D9B429CFF5D6005EE518 /* Preview Assets.xcassets */; };
+		8742D9BA29CFF5D6005EE518 /* walletAppClip.app in Embed App Clips */ = {isa = PBXBuildFile; fileRef = 8742D9AB29CFF5D5005EE518 /* walletAppClip.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8742D9C029CFF60C005EE518 /* balanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8742D9BF29CFF60C005EE518 /* balanceView.swift */; };
+		8742D9C329CFFD0C005EE518 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8742D9C229CFFD0C005EE518 /* Alamofire */; };
+		8742D9C529CFFD12005EE518 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 8742D9C429CFFD12005EE518 /* SwiftyJSON */; };
+		8742D9C729D02080005EE518 /* addressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8742D9C629D02080005EE518 /* addressView.swift */; };
+		8742D9C929D03E2F005EE518 /* addressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8742D9C829D03E2F005EE518 /* addressView.swift */; };
 		87CEC5DF29CEF5B1001B2B4F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 87CEC5DE29CEF5B1001B2B4F /* Alamofire */; };
 		87CEC5E229CEF64E001B2B4F /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 87CEC5E129CEF64E001B2B4F /* SwiftyJSON */; };
 		87CEC5E629CF6113001B2B4F /* balanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CEC5E529CF6113001B2B4F /* balanceView.swift */; };
@@ -20,6 +30,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		8742D9B829CFF5D6005EE518 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 87CF8B7429CDA4FC00FC84EE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8742D9AA29CFF5D5005EE518;
+			remoteInfo = walletAppClip;
+		};
 		87CF8B8D29CDA4FD00FC84EE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 87CF8B7429CDA4FC00FC84EE /* Project object */;
@@ -36,7 +53,31 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		8742D9BB29CFF5D6005EE518 /* Embed App Clips */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/AppClips";
+			dstSubfolderSpec = 16;
+			files = (
+				8742D9BA29CFF5D6005EE518 /* walletAppClip.app in Embed App Clips */,
+			);
+			name = "Embed App Clips";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		8742D9AB29CFF5D5005EE518 /* walletAppClip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = walletAppClip.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8742D9AD29CFF5D5005EE518 /* walletAppClipApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = walletAppClipApp.swift; sourceTree = "<group>"; };
+		8742D9AF29CFF5D5005EE518 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8742D9B129CFF5D6005EE518 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8742D9B429CFF5D6005EE518 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8742D9B629CFF5D6005EE518 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8742D9B729CFF5D6005EE518 /* walletAppClip.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = walletAppClip.entitlements; sourceTree = "<group>"; };
+		8742D9BF29CFF60C005EE518 /* balanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = balanceView.swift; sourceTree = "<group>"; };
+		8742D9C629D02080005EE518 /* addressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addressView.swift; sourceTree = "<group>"; };
+		8742D9C829D03E2F005EE518 /* addressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addressView.swift; sourceTree = "<group>"; };
 		87CEC5E529CF6113001B2B4F /* balanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = balanceView.swift; sourceTree = "<group>"; };
 		87CF8B7C29CDA4FC00FC84EE /* fastwallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fastwallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87CF8B7F29CDA4FC00FC84EE /* fastwalletApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fastwalletApp.swift; sourceTree = "<group>"; };
@@ -51,6 +92,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		8742D9A829CFF5D5005EE518 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8742D9C529CFFD12005EE518 /* SwiftyJSON in Frameworks */,
+				8742D9C329CFFD0C005EE518 /* Alamofire in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		87CF8B7929CDA4FC00FC84EE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -77,13 +127,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8742D9AC29CFF5D5005EE518 /* walletAppClip */ = {
+			isa = PBXGroup;
+			children = (
+				8742D9C829D03E2F005EE518 /* addressView.swift */,
+				8742D9BF29CFF60C005EE518 /* balanceView.swift */,
+				8742D9AD29CFF5D5005EE518 /* walletAppClipApp.swift */,
+				8742D9AF29CFF5D5005EE518 /* ContentView.swift */,
+				8742D9B129CFF5D6005EE518 /* Assets.xcassets */,
+				8742D9B629CFF5D6005EE518 /* Info.plist */,
+				8742D9B729CFF5D6005EE518 /* walletAppClip.entitlements */,
+				8742D9B329CFF5D6005EE518 /* Preview Content */,
+			);
+			path = walletAppClip;
+			sourceTree = "<group>";
+		};
+		8742D9B329CFF5D6005EE518 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				8742D9B429CFF5D6005EE518 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8742D9C129CFFD0C005EE518 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		87CF8B7329CDA4FC00FC84EE = {
 			isa = PBXGroup;
 			children = (
 				87CF8B7E29CDA4FC00FC84EE /* fastwallet */,
 				87CF8B8F29CDA4FD00FC84EE /* fastwalletTests */,
 				87CF8B9929CDA4FD00FC84EE /* fastwalletUITests */,
+				8742D9AC29CFF5D5005EE518 /* walletAppClip */,
 				87CF8B7D29CDA4FC00FC84EE /* Products */,
+				8742D9C129CFFD0C005EE518 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -93,6 +175,7 @@
 				87CF8B7C29CDA4FC00FC84EE /* fastwallet.app */,
 				87CF8B8C29CDA4FD00FC84EE /* fastwalletTests.xctest */,
 				87CF8B9629CDA4FD00FC84EE /* fastwalletUITests.xctest */,
+				8742D9AB29CFF5D5005EE518 /* walletAppClip.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -100,6 +183,7 @@
 		87CF8B7E29CDA4FC00FC84EE /* fastwallet */ = {
 			isa = PBXGroup;
 			children = (
+				8742D9C629D02080005EE518 /* addressView.swift */,
 				87CEC5E529CF6113001B2B4F /* balanceView.swift */,
 				87CF8B7F29CDA4FC00FC84EE /* fastwalletApp.swift */,
 				87CF8B8129CDA4FC00FC84EE /* contentView.swift */,
@@ -137,6 +221,27 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		8742D9AA29CFF5D5005EE518 /* walletAppClip */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8742D9BE29CFF5D6005EE518 /* Build configuration list for PBXNativeTarget "walletAppClip" */;
+			buildPhases = (
+				8742D9A729CFF5D5005EE518 /* Sources */,
+				8742D9A829CFF5D5005EE518 /* Frameworks */,
+				8742D9A929CFF5D5005EE518 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = walletAppClip;
+			packageProductDependencies = (
+				8742D9C229CFFD0C005EE518 /* Alamofire */,
+				8742D9C429CFFD12005EE518 /* SwiftyJSON */,
+			);
+			productName = walletAppClip;
+			productReference = 8742D9AB29CFF5D5005EE518 /* walletAppClip.app */;
+			productType = "com.apple.product-type.application.on-demand-install-capable";
+		};
 		87CF8B7B29CDA4FC00FC84EE /* fastwallet */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 87CF8BA029CDA4FD00FC84EE /* Build configuration list for PBXNativeTarget "fastwallet" */;
@@ -144,10 +249,12 @@
 				87CF8B7829CDA4FC00FC84EE /* Sources */,
 				87CF8B7929CDA4FC00FC84EE /* Frameworks */,
 				87CF8B7A29CDA4FC00FC84EE /* Resources */,
+				8742D9BB29CFF5D6005EE518 /* Embed App Clips */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				8742D9B929CFF5D6005EE518 /* PBXTargetDependency */,
 			);
 			name = fastwallet;
 			packageProductDependencies = (
@@ -204,6 +311,9 @@
 				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
+					8742D9AA29CFF5D5005EE518 = {
+						CreatedOnToolsVersion = 14.2;
+					};
 					87CF8B7B29CDA4FC00FC84EE = {
 						CreatedOnToolsVersion = 14.2;
 					};
@@ -237,11 +347,21 @@
 				87CF8B7B29CDA4FC00FC84EE /* fastwallet */,
 				87CF8B8B29CDA4FD00FC84EE /* fastwalletTests */,
 				87CF8B9529CDA4FD00FC84EE /* fastwalletUITests */,
+				8742D9AA29CFF5D5005EE518 /* walletAppClip */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		8742D9A929CFF5D5005EE518 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8742D9B529CFF5D6005EE518 /* Preview Assets.xcassets in Resources */,
+				8742D9B229CFF5D6005EE518 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		87CF8B7A29CDA4FC00FC84EE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -268,11 +388,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		8742D9A729CFF5D5005EE518 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8742D9C029CFF60C005EE518 /* balanceView.swift in Sources */,
+				8742D9C929D03E2F005EE518 /* addressView.swift in Sources */,
+				8742D9B029CFF5D5005EE518 /* ContentView.swift in Sources */,
+				8742D9AE29CFF5D5005EE518 /* walletAppClipApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		87CF8B7829CDA4FC00FC84EE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				87CEC5E629CF6113001B2B4F /* balanceView.swift in Sources */,
+				8742D9C729D02080005EE518 /* addressView.swift in Sources */,
 				87CF8B8229CDA4FC00FC84EE /* contentView.swift in Sources */,
 				87CF8B8029CDA4FC00FC84EE /* fastwalletApp.swift in Sources */,
 			);
@@ -298,6 +430,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		8742D9B929CFF5D6005EE518 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8742D9AA29CFF5D5005EE518 /* walletAppClip */;
+			targetProxy = 8742D9B829CFF5D6005EE518 /* PBXContainerItemProxy */;
+		};
 		87CF8B8E29CDA4FD00FC84EE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 87CF8B7B29CDA4FC00FC84EE /* fastwallet */;
@@ -311,6 +448,68 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		8742D9BC29CFF5D6005EE518 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = walletAppClip/walletAppClip.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"walletAppClip/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = walletAppClip/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = fastwallet;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = TT.fastwallet.Clip;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8742D9BD29CFF5D6005EE518 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = walletAppClip/walletAppClip.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"walletAppClip/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = walletAppClip/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = fastwallet;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = TT.fastwallet.Clip;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		87CF8B9E29CDA4FD00FC84EE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -428,6 +627,7 @@
 		87CF8BA129CDA4FD00FC84EE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -456,6 +656,7 @@
 		87CF8BA229CDA4FD00FC84EE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -556,6 +757,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		8742D9BE29CFF5D6005EE518 /* Build configuration list for PBXNativeTarget "walletAppClip" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8742D9BC29CFF5D6005EE518 /* Debug */,
+				8742D9BD29CFF5D6005EE518 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		87CF8B7729CDA4FC00FC84EE /* Build configuration list for PBXProject "fastwallet" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -614,6 +824,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		8742D9C229CFFD0C005EE518 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 87CEC5DD29CEF5B1001B2B4F /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		8742D9C429CFFD12005EE518 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 87CEC5E029CEF64E001B2B4F /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
 		87CEC5DE29CEF5B1001B2B4F /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 87CEC5DD29CEF5B1001B2B4F /* XCRemoteSwiftPackageReference "Alamofire" */;

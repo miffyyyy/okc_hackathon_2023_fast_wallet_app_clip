@@ -1,10 +1,9 @@
 //
 //  ContentView.swift
-//  fastwallet
+//  walletAppClip
 //
-//  Created by xinyi wu on 3/24/23.
+//  Created by xinyi wu on 3/25/23.
 //
-
 import SwiftUI
 import UIKit
 import Alamofire
@@ -65,15 +64,22 @@ struct ActivityIndicator: UIViewRepresentable {
         } else {
             uiView.stopAnimating()
         }
-        
-//        createWalletAccountAndClaimTokens { walletAddress in
-//                    self.showBalanceView(walletAddress: walletAddress)
-//                }
     }
 }
 
 class ViewController: UIViewController {
     @Binding var isLoading: Bool
+    var uniqueDeviceID: String {
+        get {
+            if let uuid = UserDefaults.standard.string(forKey: "uniqueDeviceID") {
+                return uuid
+            } else {
+                let newUUID = UUID().uuidString
+                UserDefaults.standard.set(newUUID, forKey: "uniqueDeviceID")
+                return newUUID
+            }
+        }
+    }
 
     init(isLoading: Binding<Bool>) {
         _isLoading = isLoading
@@ -134,7 +140,7 @@ extension ViewController {
 
     func createWalletAccountAndClaimTokens(completion: @escaping (String, String) -> Void) {
         // get device uuid
-        let deviceID = UIDevice.current.identifierForVendor?.uuidString ?? "unknown"
+        let deviceID = uniqueDeviceID
 
         // first post request: create_wallet_account
         let createWalletURL = "http://localhost:8000/create_wallet_account/"

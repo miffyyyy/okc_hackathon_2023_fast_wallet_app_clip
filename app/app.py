@@ -309,6 +309,11 @@ class DeviceIDInput(BaseModel):
     device_id: str
 
 
+@app.get("/app-clip")
+async def app_clip():
+    return {"message": "App Clip invoked!"}
+
+
 @app.post("/create_wallet_account/")
 async def create_wallet_account(device_id_input: DeviceIDInput):
     device_id = device_id_input.device_id
@@ -358,7 +363,7 @@ async def ping():
 async def get_erc20_balance(
     contract_address: str, account_address: str
 ) -> BalanceResponse:
-    await asyncio.sleep(20)
+    await asyncio.sleep(10)
     w3 = Web3(Web3.HTTPProvider("https://exchaintestrpc.okex.org"))
     _contract_address = Web3.to_checksum_address(contract_address)
     contract = w3.eth.contract(address=_contract_address, abi=abi)

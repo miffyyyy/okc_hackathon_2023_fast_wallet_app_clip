@@ -44,7 +44,6 @@ struct ClaimTokensResponse: Codable {
 
 
 class ViewController: UIViewController{
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -53,13 +52,65 @@ class ViewController: UIViewController{
         claimButton.frame = CGRect(x: 100, y: 100, width: 200, height: 40)
         claimButton.addTarget(self, action: #selector(claimButtonTapped), for: .touchUpInside)
         
+        claimButton.backgroundColor = UIColor(red: 0.83, green: 0.77, blue: 0.98, alpha: 1.00)
+        claimButton.setTitleColor(UIColor.white, for: .normal)
+        claimButton.layer.borderWidth = 2
+        claimButton.layer.borderColor = UIColor(red: 0.83, green: 0.77, blue: 0.98, alpha: 1.00).cgColor
+        claimButton.layer.cornerRadius = claimButton.frame.height/2
+        claimButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+
         view.addSubview(claimButton)
     }
+
     
     @objc func claimButtonTapped() {
-        createWalletAccountAndClaimTokens { walletAddress in
-            self.showBalanceView(walletAddress: walletAddress)
+        // 创建第一个方框
+        let walletView = UIView()
+        walletView.frame = CGRect(x: 0, y: 0, width: 200, height: 100)
+        walletView.center = view.center
+        walletView.backgroundColor = UIColor.white
+        walletView.layer.borderColor = UIColor(red: 0.83, green: 0.77, blue: 0.98, alpha: 1.00).cgColor
+        walletView.layer.borderWidth = 2
+        view.addSubview(walletView)
+        
+        // 添加第一个方框的文本标签
+        let walletLabel = UILabel()
+        walletLabel.numberOfLines = 0
+        walletLabel.text = "Wallet:\nahsdbahjsdvjhsd"
+        walletLabel.textAlignment = .left
+        walletLabel.frame = walletView.bounds
+        walletLabel.sizeToFit()
+        walletView.addSubview(walletLabel)
+        
+        // 创建第二个方框
+        let wordsView = UIView()
+        wordsView.frame = CGRect(x: 0, y: 0, width: 200, height: 100)
+        wordsView.center = CGPoint(x: walletView.center.x, y: walletView.center.y + walletView.frame.size.height + 50)
+        wordsView.backgroundColor = UIColor.white
+        wordsView.layer.borderColor = UIColor(red: 0.83, green: 0.77, blue: 0.98, alpha: 1.00).cgColor
+        wordsView.layer.borderWidth = 2
+        view.addSubview(wordsView)
+        
+        // 添加第二个方框的文本标签
+        let wordsLabel = UILabel()
+        wordsLabel.text = "Words:\nCat\nDog\nBunny"
+        wordsLabel.numberOfLines = 0
+        wordsLabel.textAlignment = .left
+        wordsLabel.frame = wordsView.bounds
+        wordsLabel.sizeToFit()
+        wordsView.addSubview(wordsLabel)
+        
+        // 3秒后移除walletLabel和wordsLabel
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+            wordsView.removeFromSuperview()
+            walletView.removeFromSuperview()
+            walletLabel.removeFromSuperview()
+            wordsLabel.removeFromSuperview()
         }
+        
+//        createWalletAccountAndClaimTokens { walletAddress in
+//                    self.showBalanceView(walletAddress: walletAddress)
+//                }
     }
 }
 

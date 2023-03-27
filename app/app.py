@@ -363,7 +363,7 @@ async def ping():
 async def get_erc20_balance(
     contract_address: str, account_address: str
 ) -> BalanceResponse:
-    await asyncio.sleep(10)
+    await asyncio.sleep(5)
     w3 = Web3(Web3.HTTPProvider("https://exchaintestrpc.okex.org"))
     _contract_address = Web3.to_checksum_address(contract_address)
     contract = w3.eth.contract(address=_contract_address, abi=abi)

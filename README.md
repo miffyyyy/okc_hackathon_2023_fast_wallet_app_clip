@@ -1,17 +1,22 @@
-# okc_hackathon_2023_fast_wallet_app_clip_draft
+# okc_hackathon_2023_Wall_EZ_app_clip
 a lightweight wallet application that enables quick access and usage.
 
 ### General Use Case:
-The main use case of this application is to create an airdrop smart contract on the OKChain network and distribute tokens to users who scan a QR code on a website. Users scan the QR code using the App Clip functionality, which opens a lightweight app for verification. Upon successful verification, users receive a key, allowing them to collect tokens, sign transactions, and copy their seed phrase.
+The main use case of this application is to create an airdrop smart contract on the OKChain network and distribute tokens to users who scan a QR code on a website. Users scan the QR code using the App Clip functionality, which opens a lightweight app for verification. Upon successful verification, users receive a key, allowing them to collect tokens, sign transactions, and copy their seed phrase. Due to limitations in the test environment and not being part of the Apple Developer Program, deep links for App Clips could not be implemented. However, the App Clip functionality can be tested and demonstrated in a test environment.
 
 ### Interface and Acceptance Criteria:
 
-- The App should have a QR code scanner to read the QR code and extract the URL.
-- Upon scanning the QR code, the App should create a wallet for the user.
+- Users can access the wallet creation functionality without having to install the full app. 
+- The App Clip should create a wallet for the user.
 - The App Clip should verify the user and provide a key to collect tokens.
 - The App should receive tokens on the created wallet.
 - Users should have access to their wallet with the received token.
 - Users should be able to sign transactions and copy their seed phrase using the App Clip.
+
+## How to verify the user by device id
+- `UIDevice.current.identifierForVendor?.uuidString` provides a unique identifier for a device, which can be used to verify the user within the context of a specific vendor's apps. Although it's not linked to a user's personal information, this identifier can help app developers associate app-related data with a specific device. 
+- Uniqueness: The identifierForVendor is unique because it is generated based on the app's bundle ID and the device's vendor ID. 
+- When a user interacts with the app, we can retrieve their device's identifierForVendor and store it on our server.
 
 ## Output a Skeleton of Code:
 
